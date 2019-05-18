@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>自宅センサチャート</title>
+        <link rel="text" type="text/plain" href="../res/201903/temp_20190301.json">
+        <style>
+            #searchForm{
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <header><h1>センサの値をみせるお</h1></header>
+        <nav></nav>
+        <section>
+            <div id="searchForm">
+                <h2>検索</h2>
+                <form id="SensorDataSearchForm">
+
+                    <select id="searchMonthList" name="month" required form="SensorDataSearchForm">
+                    <option value="">▼選択してください</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                    </select>
+                    <select id="searchDayList" name="day" required form="SensorDataSearchForm">
+                        <option value="">▼選択してください</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                    </select>
+                    <input type="submit" value="検索"/>
+                </form>
+            </div>
+            <div id="chartArea">
+                <!-- 気温チャート -->
+                <div id="chartContainer" style="height: 300px; width: 80%; margin: auto 0;"></div>
+                <div id="cts1"></div>
+            </div>
+        </section>
+        <footer>Copyright 2019</footer>
+        <!-- script area -->
+        <script src="../js/lib/jquery.min.js"></script>
+        <script src="../js/lib/jquery.canvasjs.min.js"></script>
+        <script src="../js/graph.js"></script>
+        <script type="text/javascript">
+            window.onload = chartLoad();
+        </script>
+    </body>
+</html>
